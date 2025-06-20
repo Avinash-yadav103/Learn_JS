@@ -160,24 +160,114 @@
 
 // loadScript("https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js");
 
-const loadScript =(src)=>{
-  return new Promise(function(resolve,reject){
-    let script = document.createElement('script');
-    script.type = "text/javascript";
-    script.src = src;
-    document.body.appendChild(script);
-    script.onload = () => resolve(1);
-    script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
-  });
-}
+// const loadScript =(src)=>{
+//   return new Promise(function(resolve,reject){
+//     let script = document.createElement('script');
+//     script.type = "text/javascript";
+//     script.src = src;
+//     document.body.appendChild(script);
+//     script.onload = () => resolve(1);
+//     script.onerror = () => reject(new Error(`Failed to load script: ${src}`));
+//   });
+// }
 
-let p1 = loadScript("https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js")
-p1.then(() => console.log("Script loaded successfully bunny"))
-  .catch(error => console.error("We got some error buddy" + error));
+// let p1 = loadScript("https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js")
+// p1.then(() => console.log("Script loaded successfully bunny"))
+//   .catch(error => console.error("We got some error buddy" + error));
 
   
+// //The promise API
+// let p1 = new Promise((resolve, reject) => {
+// setTimeout(() => {
+//   resolve("Promise 1 resolved");
+// }, 1000);
+// });
 
+// let p2 = new Promise((resolve, reject) => {
+// setTimeout(() => {
+//   resolve("Promise 2 resolved");
+// }, 1000);
+// });
 
+// let p3 = new Promise((resolve, reject) => {
+// setTimeout(() => {
+//   resolve("Promise 3 resolved");
+// }, 1000);
+// });
+
+// // p1.then((value) => console.log(value));
+// // p2.then((value) => console.log(value));
+// // p3.then((value) => console.log(value));
+// let promise_all = Promise.all([p1,p2,p3])
+// promise_all.then((value)=>{
+//   console.log(value)
+// })
+
+// let promise_all_set = Promise.allSettled([p1,p2,p3])
+// promise_all_set.then((value)=>{
+//   console.log(value)
+// })
+
+// let promise_race = Promise.race([p1, p2, p3]);
+// promise_race.then((value) => {
+//   console.log("Promise race resolved with value:", value);
+// }).catch((error) => {
+//   console.error("Promise race rejected with error:", error);
+// });
+
+// // Using Promise.resolve
+// let resolvedPromise = Promise.resolve("This is a resolved promise");
+// resolvedPromise.then((value) => {
+//   console.log("Resolved:", value);
+// });
+
+// // Using Promise.reject
+// let rejectedPromise = Promise.reject(new Error("This is a rejected promise"));
+// rejectedPromise.catch((error) => {
+//   console.error("Rejected:", error.message);
+// });
+
+//Async await functions
+// async function avinash() {
+//   console.log("Avinash function started"); //2
+
+//   let delhiWeather = new Promise((resolve, reject) => {
+//     console.log("Fetching Delhi weather...");  //3
+//     setTimeout(() => {
+//       console.log("Delhi weather fetched");   // 7
+//       resolve("27 deg");
+//     }, 1000);
+//   });
+
+//   let bangaloreWeather = new Promise((resolve, reject) => {
+//     console.log("Fetching Bangalore weather...");  //4
+//     setTimeout(() => {
+//       console.log("Bangalore weather fetched");
+//       resolve("21 deg");
+//     }, 3000);
+//   });
+
+//   console.log("Waiting for Delhi weather...");   //5
+//   let delhiW = await delhiWeather;
+//   console.log("Delhi weather resolved:", delhiW);  //8
+
+//   console.log("Waiting for Bangalore weather...");  // 9
+//   let bangW = await bangaloreWeather;
+//   console.log("Bangalore weather resolved:", bangW);  // 10
+
+//   console.log("Returning weather data...");  //11
+//   return [delhiW, bangW];
+// }
+
+// const cherry = () => {
+//   console.log("Hey I am not waiting");  //6
+// }; 
+
+// console.log("Welcome to weather control bureau"); //1
+// avinash().then((weatherData) => {
+//   console.log("Weather data received:", weatherData); //12
+// });
+// cherry();
 
 // Practice set 8 and exercise 3 
-//Question 1
+//Question 1 
